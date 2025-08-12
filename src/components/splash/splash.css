@@ -1,0 +1,12 @@
+.splashContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.splashImg{
+    width: 75%;
+    border-radius: 15px;
+    mask-image: linear-gradient(to right, black, transparent);
+    padding-top: 70px;
+}
