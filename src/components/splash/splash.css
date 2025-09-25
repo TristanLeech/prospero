@@ -6,7 +6,9 @@
 
 .splashImg{
     width: 75%;
-    border-radius: 15px;
+    /* overflow: hidden; */
     mask-image: linear-gradient(to right, black, transparent);
-    padding-top: 70px;
+    border-top: 70px;
+    border-left: 50px;
+    border-radius: 15px;
 }
