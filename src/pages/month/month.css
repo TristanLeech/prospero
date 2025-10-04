@@ -1,52 +1,80 @@
-.monthContainer{
+.monthPage{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 85vh;
-    background-color: #5b6886;
+    background-color: #424F6D;
     border-radius: 10px;
     margin: 8px;
     overflow: hidden;
-    text-align: center;
-}
-
-.monthRow{
-    display: flex;
-    flex-direction: row;
 }
 
 .calendar{
     width: 100%;
     height: 100%;
+    margin: 10px;
+    border: 10px;
 }
 
 .calendarHeader{
-    background-color: #424F6D;
+    background-color: #2b3347;
     color: #ffff;
     padding: 10px, 0;
     font-size: 20px;
     height: 10%;
     border-radius: 10px;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 table{
     width: 100%;
-    height: 100%;
-    border-collapse: collapse;
+    height: 90%;
     border-radius: 10px;
+    border-spacing: 4px;
+}
+
+thead{
+    justify-content: space-evenly;
+}
+
+tr{
+    background-color: black;
+}
+
+.calendarTable{
+    border: 0,10px,0,10px;
 }
 
 th, td{
     padding: 8px;
-    text-align: center;
-    border: 5px, hidden #ffff;
     border-radius: 10px;
+    margin: 10px;
+    width: 14%;
 }
 
 th{
-    background-color: #2b3347;
+    background-color: #424F6D;
+}
+td{
+    background-color: #5b6886;
+    align-content: flex-start;
+    text-align: right;
+    color: #2b3347;
+    border: solid transparent, 4px;
 }
 td:hover{
     background-color:#424F6D;
+    border: solid 4px #5b6886;
 }
+
+/*
+lightest: 5b6886
+middle: 424F6D
+darkest: 2b3347
+*/

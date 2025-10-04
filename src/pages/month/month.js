@@ -12,10 +12,13 @@ const dates = [
 
 function Month() {
   return (
-    <div className="monthContainer">
+    <div className="monthPage">
       <div className="calendar">
-        <div className="calendarHeader">October</div>
-        <table id="calendarTable">
+        <div className="calendarHeader">
+          October
+
+        </div>
+        <table className="calendarTable">
           <thead>
             <tr>
               {days.map((day, i) => (
