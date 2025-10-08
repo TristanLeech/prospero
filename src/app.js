@@ -1,8 +1,7 @@
 import React from "react";
+import './index.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
-import styles from './app.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Global Components
 import Navbar from './components/navbar/navbar.js';
@@ -19,18 +18,9 @@ function ScrollToTop() {
   return null;
 }
 
-const router = createBrowserRouter([
-  {path: "/", element: <App />},
-  {path: "/navbar", element: <Navbar />},
-  {path: "/splash", element: <Splash />},
-  {path: "/month", element: <Month />},
-  {path: "*", element: <NotFoundPage />}
-]);
-
 function AppInner() {
   return (
     <>
-      <CssBaseline />
             <div className="App">
               <Navbar />
               <main>
