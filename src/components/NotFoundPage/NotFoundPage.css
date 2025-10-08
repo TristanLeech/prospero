@@ -1,0 +1,6 @@
+.nfpContainer {
+    font-family: "Cal Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
