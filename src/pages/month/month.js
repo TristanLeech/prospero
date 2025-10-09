@@ -1,5 +1,6 @@
 import React from "react";
 import "./month.css";
+import { Link } from "react-router-dom";
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const dates = [
@@ -13,29 +14,37 @@ const dates = [
 function Month() {
   return (
     <div className="monthPage">
-      <div className="monthContainer">
-        <div className="calendar">
-          <div className="calendarHeader">
-            October
-          </div>
-          <table className="calendarTable">
-            <thead>
-              <tr>
-                {days.map((day, i) => (
-                  <th  key={i}>{day}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {dates.map((week, wi) => (
-                <tr key={wi}>
-                  {week.map((date, di) => (
-                    <td key={di}>{date}</td>
+      <div className="monthCarousel">
+        <div className="prevMonth">
+          <Link><h1>&lt;</h1></Link>
+        </div>
+        <div className="monthContainer">
+          <div className="calendar">
+            <div className="calendarHeader">
+              October
+            </div>
+            <table className="calendarTable">
+              <thead>
+                <tr>
+                  {days.map((day, i) => (
+                    <th  key={i}>{day}</th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {dates.map((week, wi) => (
+                  <tr key={wi}>
+                    {week.map((date, di) => (
+                      <td key={di}>{date}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="nextMonth">
+          <Link><h1>&gt;</h1></Link> 
         </div>
       </div>
     </div>

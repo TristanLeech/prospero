@@ -6,6 +6,42 @@
     height: 85vh;
 }
 
+.monthCarousel{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.monthCarousel h1{
+    color: #2b3347;
+}
+
+.monthCarousel a{
+    text-decoration: none;;
+}
+
+.prevMonth{
+    height: 100%;
+    width: 5%;
+    align-content: center;
+    background-color: #424F6D;
+    border-radius: 0px 8px 8px 0px;
+    text-align: center;
+}
+
+.nextMonth{
+    height: 100%;
+    width: 5%;
+    align-content: center;
+    text-align: center;
+    background-color: #424F6D;
+    border-radius: 8px 0px 0px 8px;
+}
+
+
 .monthContainer{
     display: flex;
     flex-direction: column;

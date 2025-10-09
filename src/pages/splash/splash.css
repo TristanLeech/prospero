@@ -15,6 +15,7 @@
 
 .splashImg{
     width: 75%;
+    height: 110%;
     /* overflow: hidden; */
     mask-image: linear-gradient(to right, black, transparent);
     border-top: 70px;

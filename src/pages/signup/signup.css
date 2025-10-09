@@ -11,7 +11,7 @@
 }
 
 .signContainer{
-    height: 60vh;
+    height: 70vh;
     width: 30vw;
     background-color: #424F6D;
     border-radius: 16px;
@@ -26,7 +26,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60%;
+
     width: 80%;
     border-radius: 8px;
 }
@@ -34,11 +34,16 @@
 .signContainer form input{
     margin: 8px;
     height: 8%;
-    width: 80%;
+    width: 70%;
     border-radius: 8px;
     border: none;
-    padding: 4px;
+    padding: 8px;
     margin: 16px;
+}
+
+.signForm{
+    height: 100%;
+    padding: 15px 0px;
 }
 
 .signContainer form input::placeholder{
