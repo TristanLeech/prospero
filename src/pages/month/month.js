@@ -22,7 +22,7 @@ function Month() {
             <thead>
               <tr>
                 {days.map((day, i) => (
-                  <th tabIndex key={i}>{day}</th>
+                  <th  key={i}>{day}</th>
                 ))}
               </tr>
             </thead>

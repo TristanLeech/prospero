@@ -1,0 +1,58 @@
+.leafImg{
+    width: 150px;
+}
+
+.signPage{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signContainer{
+    height: 60vh;
+    width: 30vw;
+    background-color: #424F6D;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signContainer form{
+    background-color: #5b6886;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.signContainer form input{
+    margin: 8px;
+    height: 8%;
+    width: 80%;
+    border-radius: 8px;
+    border: none;
+    padding: 4px;
+    margin: 16px;
+}
+
+.signContainer form input::placeholder{
+    color: #5b6886;
+}
+
+.loginLink{
+    color: #5b6886;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px 20px;
+}
+
+h1{
+    color: #FFFFFF;
+}

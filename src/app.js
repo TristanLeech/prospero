@@ -10,6 +10,8 @@ import Navbar from './components/navbar/navbar.js';
 import Splash from './pages/splash/splash.js';
 import Month from './pages/month/month.js';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage.js';
+import Signup from './pages/signup/signup.js';
+import Login from './pages/login/login.js';
 
 // Optional: Scroll to top on page change
 function ScrollToTop() {
@@ -28,9 +30,9 @@ function AppInner() {
                   {/* General Routes */}
                   <Route path="/" element={<Splash />} />
                   <Route path="/pages/month/month.js" element={<Month />} />
-                  {/* <Route path="/login" element={<Login />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/contact" element={<ContactPage />} /> */}
+                  <Route path="/pages/signup/signup.js" element={<Signup />} />
+                  <Route path="/pages/login/login.js" element={<Login />} />
+                  {/* <Route path="/contact" element={<ContactPage />} /> */}
 
                   {/* Fallback */}
                   <Route
