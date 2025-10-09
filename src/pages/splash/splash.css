@@ -1,7 +1,14 @@
+.splashPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .splashContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 80%;
 }
 
 .splashImg{

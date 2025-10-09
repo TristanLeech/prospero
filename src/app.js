@@ -1,5 +1,5 @@
 import React from "react";
-import './index.css';
+import './app.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
 
@@ -9,7 +9,7 @@ import Navbar from './components/navbar/navbar.js';
 // Pages
 import Splash from './pages/splash/splash.js';
 import Month from './pages/month/month.js';
-import NotFoundPage from './components/NotFoundPage/NotFoundPage.jsx';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage.js';
 
 // Optional: Scroll to top on page change
 function ScrollToTop() {

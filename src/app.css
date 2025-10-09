@@ -5,3 +5,17 @@ body{
     font-family: "Cal Sans", sans-serif;
     margin: 0;
 }
+
+button{
+    font-family: "Cal Sans", sans-serif;
+    border-radius: 8px;
+    border: solid 2px #2b3347;
+    background-color: #2b3347;
+    color: #5b6886;
+}
+
+button:hover{
+    background-color: #424F6D;
+    color: #2b3347;
+    cursor: pointer;
+}

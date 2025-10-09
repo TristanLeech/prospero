@@ -13,29 +13,30 @@ const dates = [
 function Month() {
   return (
     <div className="monthPage">
-      <div className="calendar">
-        <div className="calendarHeader">
-          October
-
-        </div>
-        <table className="calendarTable">
-          <thead>
-            <tr>
-              {days.map((day, i) => (
-                <th key={i}>{day}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {dates.map((week, wi) => (
-              <tr key={wi}>
-                {week.map((date, di) => (
-                  <td key={di}>{date}</td>
+      <div className="monthContainer">
+        <div className="calendar">
+          <div className="calendarHeader">
+            October
+          </div>
+          <table className="calendarTable">
+            <thead>
+              <tr>
+                {days.map((day, i) => (
+                  <th tabIndex key={i}>{day}</th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {dates.map((week, wi) => (
+                <tr key={wi}>
+                  {week.map((date, di) => (
+                    <td key={di}>{date}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
