@@ -1,6 +1,10 @@
 import React from "react";
 import "./month.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import MonthDisplay from "../../components/monthYear/monthYear";
+
+
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const dates = [
@@ -21,7 +25,7 @@ function Month() {
         <div className="monthContainer">
           <div className="calendar">
             <div className="calendarHeader">
-              October
+              <MonthDisplay />
             </div>
             <table className="calendarTable">
               <thead>

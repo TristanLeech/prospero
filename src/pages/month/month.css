@@ -30,6 +30,7 @@
     background-color: #424F6D;
     border-radius: 0px 8px 8px 0px;
     text-align: center;
+    cursor: pointer;
 }
 
 .nextMonth{
@@ -39,6 +40,7 @@
     text-align: center;
     background-color: #424F6D;
     border-radius: 8px 0px 0px 8px;
+    cursor: pointer;
 }
 
 
