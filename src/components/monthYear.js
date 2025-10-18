@@ -6,7 +6,7 @@ const months = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-function MonthDisplay() {
+function MonthHeader() {
   const [currentDate] = useState(new Date());
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -18,4 +18,4 @@ function MonthDisplay() {
   );
 }
 
-export default MonthDisplay;
+export default MonthHeader;

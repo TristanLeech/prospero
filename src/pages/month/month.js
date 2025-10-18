@@ -2,9 +2,30 @@ import React from "react";
 import "./month.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import MonthDisplay from "../../components/monthYear/monthYear";
+import MonthHeader from "../../components/monthYear";
+import DaysLoader from "../../components/daysLoader";
 
+// document.addEventListener('DOMContentLoaded', function() {
+//   const monthYear =document.getElementById('month-year');
 
+//   const months=[
+//     'January', 'February', 'March', 'April', 'May', 'June',
+//     'July', 'August', 'September', 'October', 'November', 'December'
+//   ];
+
+//   let currentDate=new Date();
+//   let today=new Date();
+
+//   function renderCalendar(date){
+//     const year=date.getFullYear();
+//     const month=date.getMonth();
+//     const firstDay=new Date(year, month, 1).getDay();
+//     const lastDay=new Date(year, month+1, 0).getDate();
+
+//     monthYear.textContent=`${months[month]} ${year}`;
+//   }
+//   renderCalendar(currentDate);
+// });
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const dates = [
@@ -25,7 +46,7 @@ function Month() {
         <div className="monthContainer">
           <div className="calendar">
             <div className="calendarHeader">
-              <MonthDisplay />
+              <MonthHeader />
             </div>
             <table className="calendarTable">
               <thead>
@@ -35,6 +56,9 @@ function Month() {
                   ))}
                 </tr>
               </thead>
+              {/* <div className="calendarBody">
+                <DaysLoader />
+              </div> */}
               <tbody>
                 {dates.map((week, wi) => (
                   <tr key={wi}>
