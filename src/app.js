@@ -1,7 +1,6 @@
 import React from "react";
 import './app.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { CssBaseline } from "@mui/material";
 
 // Global Components
 import Navbar from './components/navbar/navbar.js';
