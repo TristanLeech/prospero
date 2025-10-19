@@ -3,14 +3,14 @@ import './app.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 // Global Components
-import Navbar from './components/navbar/navbar.js';
+import Navbar from './components/navbar/navbar.jsx';
 
 // Pages
-import Splash from './pages/splash/splash.js';
-import Month from './pages/month/month.js';
-import NotFoundPage from './components/NotFoundPage/NotFoundPage.js';
-import Signup from './pages/signup/signup.js';
-import Login from './pages/login/login.js';
+import Splash from './pages/splash/splash.jsx';
+import Month from './pages/month/month.jsx';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage.jsx';
+import Signup from './pages/signup/signup.jsx';
+import Login from './pages/login/login.jsx';
 
 // Optional: Scroll to top on page change
 function ScrollToTop() {
@@ -28,9 +28,9 @@ function AppInner() {
                 <Routes>
                   {/* General Routes */}
                   <Route path="/" element={<Splash />} />
-                  <Route path="/pages/month/month.js" element={<Month />} />
-                  <Route path="/pages/signup/signup.js" element={<Signup />} />
-                  <Route path="/pages/login/login.js" element={<Login />} />
+                  <Route path="/pages/month/month.jsx" element={<Month />} />
+                  <Route path="/pages/signup/signup.jsx" element={<Signup />} />
+                  <Route path="/pages/login/login.jsx" element={<Login />} />
                   {/* <Route path="/contact" element={<ContactPage />} /> */}
 
                   {/* Fallback */}

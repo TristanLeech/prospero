@@ -5,9 +5,9 @@ import './navbar.css';
 function Navbar() {
     return (
         <nav className="navbar">
-            <Link to={"/pages/month/month.js"}><a className="navbar-link">Calendar</a></Link>
+            <Link to={"/pages/month/month.jsx"}><a className="navbar-link">Calendar</a></Link>
             <Link to={"/"}><a className="navbar-logo">Prospero</a></Link>
-            <Link to={"/pages/signup/signup.js"} ><a className="navbar-link">Sign Up</a></Link>
+            <Link to={"/pages/signup/signup.jsx"} ><a className="navbar-link">Sign Up</a></Link>
         </nav>
     );
 }

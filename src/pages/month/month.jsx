@@ -1,7 +1,7 @@
-import React from "react";
-import "./month.css";
-import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+  import React from "react";
+  import "./month.css";
+  import { Link } from "react-router-dom";
+  import { useState, useEffect, useRef } from "react";
 import MonthHeader from "../../components/monthYear";
 import DaysLoader from "../../components/daysLoader";
 
@@ -50,7 +50,8 @@ function Month() {
             </div>
             <table className="calendarTable">
               <thead>
-                <tr>
+                <tr> 
+                  {/* fills day headers */}
                   {days.map((day, i) => (
                     <th  key={i}>{day}</th>
                   ))}
@@ -72,7 +73,7 @@ function Month() {
           </div>
         </div>
         <div className="nextMonth">
-          <Link><h1>&gt;</h1></Link> 
+          <Link><h1>&gt;</h1></Link>
         </div>
       </div>
     </div>

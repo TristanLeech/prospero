@@ -16,7 +16,7 @@ function Signup() {
                 </form>
                 <div className="loginLink">
                     <p>Already have an account? </p>
-                    <Link to="/pages/login/login.js" tabIndex={-1}><button className="splashButton">Login here</button></Link>
+                    <Link to="/pages/login/login.jsx" tabIndex={-1}><button className="splashButton">Login here</button></Link>
                 </div>
             </div>
         </div>

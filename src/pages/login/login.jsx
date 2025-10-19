@@ -11,11 +11,11 @@ function Login() {
                 <form className="logForm">
                     <input type="email" placeholder="Email" required />
                     <input type="password" placeholder="Password" required />
-                    <Link to={"/pages/month/month.js"} tabIndex={-1}><button type="submit">Log In</button></Link>
+                    <Link to={"/pages/month/month.jsx"} tabIndex={-1}><button type="submit">Log In</button></Link>
                 </form>
                 <div className="loginLink">
                     <p>Don't have an account yet?</p>
-                    <Link to="/pages/signup/signup.js" tabIndex={-1}><button className="splashButton">Sign Up</button></Link>
+                    <Link to="/pages/signup/signup.jsx" tabIndex={-1}><button className="splashButton">Sign Up</button></Link>
                 </div>
             </div>
         </div>

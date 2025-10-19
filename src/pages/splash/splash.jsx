@@ -10,7 +10,7 @@ function Splash() {
                 <div>
                     <h1>Feeling Unbalanced?</h1>
                     <h2>We can help you find your balance.</h2>
-                    <Link to="/pages/month/month.js" tabIndex={-1}>
+                    <Link to="/pages/month/month.jsx" tabIndex={-1}>
                         <button className="splashButton">Get Started</button>
                     </Link>
                 </div>
