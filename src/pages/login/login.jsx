@@ -1,8 +1,22 @@
 import React from "react";
+import axios from 'axios';
 import './login.css';
 import { Link } from "react-router-dom";
 
 function Login() {
+  //   const [user, setUser] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:5000/user-login')
+  //   .then((response) => {
+  //     setUser(response.data);
+  //   })
+  //   .catch((error) => {
+  //     console.error('the provided user does not exist')
+  //   });
+  // }, []);
+
+  
     return (
         <div className="logPage">
             <img src={require('../../assets/crystalBall.png')} alt="crystalBall.png" className="ballPic" />

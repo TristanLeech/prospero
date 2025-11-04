@@ -1,0 +1,33 @@
+.ucPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ucContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #424F6D;
+    border-radius: 10px;
+    margin: 8px;
+    overflow: hidden;
+    width: 80%;
+}
+
+.ucHeader{
+    background-color: #2b3347;
+    color: #5b6886;
+    font-size: 20px;
+    border-radius: 10px;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 10%;
+    width:max-content;
+}
