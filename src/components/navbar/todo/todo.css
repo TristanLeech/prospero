@@ -1,0 +1,39 @@
+.eventBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #5b6886;
+    border: solid 4px #5b6886;
+    width: 80%;
+}
+.lilBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 250px;
+    justify-content: flex-start;
+}
+
+.todoColour{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgb(51, 124, 53);
+    border: solid, 3px, #424F6D;
+}
+
+.eventBar:hover{
+    background-color:#424F6D;
+    border: solid 4px #5b6886;
+    cursor: pointer;
+}
+
+.title{
+    text-align: left;
+    color: #2b3347;
+    font-size: 16px;
+    font-weight: bold;
+}

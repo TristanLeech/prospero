@@ -1,18 +1,22 @@
 import express from "express";
-import db from "../db/conn.mjs";
-import { ObjectId } from "mongodb";
+import {getUsers, getUser} from "../db/database.mjs"
 
 const router = express.Router();
 
 // Get a user
 router.get("/user-login", async (req, res) => {
-  let collection = await db.collection("users");
-  let query = {_userName: ObjectId(req.params.userName)}
-  let result = await collection.findOne(query);
-
-  if (!result) res.send("Not found").status(404);
-  else res.send(result).status(200);
+  let user = await getUser(req.body.email, req.body.password);
+  return res.status(200).json({
+        success: true,
+        message: "user fetched successfully",
+        user: user
+    });
 });
+
+//Test route
+router.get("/test",async (req, res) => {
+    res.send("Here is a working endpoint").status(201);
+})
 
 // // Fetches the latest events
 // router.get("/latest", async (req, res) => {

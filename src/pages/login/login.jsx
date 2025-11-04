@@ -1,20 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import './login.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
-  //   const [user, setUser] = useState([]);
+  // State variables for Email, password, and error message
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   axios.get('http://localhost:5000/user-login')
-  //   .then((response) => {
-  //     setUser(response.data);
-  //   })
-  //   .catch((error) => {
-  //     console.error('the provided user does not exist')
-  //   });
-  // }, []);
+    // Function to handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            // Clear previous error messages
+            setErrorMessage('');
+
+            // Send login request to server
+            const response = await axios.post('http://localhost:5050/prospero/user-login', { email, password });
+
+            // If login successful, redirect to MainPage
+            if (response.status === 200) {
+                navigate('/pages/month/month.jsx');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+
+            // If login failed, display error message
+            setErrorMessage('Your Email and\nPassword are incorrect.');
+        }
+    };
 
   
     return (
@@ -23,9 +39,9 @@ function Login() {
             <div className="logContainer">
                 <h1>Log In</h1>
                 <form className="logForm">
-                    <input type="email" placeholder="Email" required />
-                    <input type="password" placeholder="Password" required />
-                    <Link to={"/pages/month/month.jsx"} tabIndex={-1}><button type="submit">Log In</button></Link>
+                    <input type="email" placeholder="Email" value= {email} onChange={(e) => setEmail(e.target.value)} required />
+                    <input type="password" placeholder="Password" value= {password} onChange={(e) => setPassword(e.target.value)} required />
+                    <button type="submit">Log In</button>
                 </form>
                 <div className="loginLink">
                     <p>Don't have an account yet?</p>

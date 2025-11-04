@@ -13,6 +13,7 @@ import Signup from './pages/signup/signup.jsx';
 import Login from './pages/login/login.jsx';
 import Day from './pages/day/day.jsx';
 import Upcoming from './pages/upcoming/upcoming.jsx';
+import Todo from "./components/navbar/todo/todo.jsx";
 
 // Optional: Scroll to top on page change
 function ScrollToTop() {
@@ -35,6 +36,7 @@ function AppInner() {
                   <Route path="/pages/login/login.jsx" element={<Login />} />
                   <Route path="/pages/upcoming/upcoming.jsx" element={<Upcoming />} />
                   <Route path="/pages/day/day.jsx" element={<Day />} />
+                  <Route path="/components/navbar/todo/todo.jsx" element={<Todo />} />
 
                   {/* Fallback */}
                   <Route

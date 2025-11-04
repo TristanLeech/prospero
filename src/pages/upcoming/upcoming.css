@@ -28,6 +28,13 @@
     align-content: center;
     align-items: center;
     margin: 10px;
-    height: 10%;
-    width:max-content;
+    width:98%;
+}
+
+.backButton{
+    margin: 10px;
+}
+
+.ucPage p{
+    color: #687699;
 }
