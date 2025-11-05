@@ -9,7 +9,7 @@ function Splash() {
                 <img src={require('../../assets/waves.png')} alt="waves.png" className="splashImg" />
                 <div>
                     <h1>Feeling Unbalanced?</h1>
-                    <h2>We can help you find your balance HELLO HELLO HELLO.</h2>
+                    <h2>We can help you find your balance</h2>
                     <Link to="/pages/signup/signup.jsx" tabIndex={-1}>
                         <button className="splashButton">Get Started</button>
                     </Link>
