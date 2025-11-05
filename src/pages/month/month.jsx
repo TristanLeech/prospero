@@ -45,7 +45,9 @@ function Month() {
         <div className="monthContainer">
           <div className="calendar">
             <div className="calendarHeader">
+              <div className="spaceholder"></div>
               <MonthHeader />
+              <Link to={"/pages/day/day.jsx"}><div className="addButton"><h2>+</h2></div></Link>
             </div>
             <table className="calendarTable">
               <thead>

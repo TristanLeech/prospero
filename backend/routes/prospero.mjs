@@ -1,11 +1,11 @@
 import express from "express";
-import {getUsers, getUser} from "../db/database.mjs"
+import * as dbMethods from "../db/database.mjs"
 
 const router = express.Router();
 
 // Get a user
-router.get("/user-login", async (req, res) => {
-  let user = await getUser(req.body.email, req.body.password);
+router.post("/user-login", async (req, res) => {
+  let user = await dbMethods.getUser(req.body.email, req.body.password);
   return res.status(200).json({
         success: true,
         message: "user fetched successfully",
@@ -13,62 +13,81 @@ router.get("/user-login", async (req, res) => {
     });
 });
 
+// Create a user
+router.post("/user-sign-up", async (req, res) => {
+  let user = await dbMethods.CreateUser(
+    req.body.username,
+    req.body.email,
+    req.body.password
+  );
+  
+  console.log('User object:', user);
+
+  return res.status(200).json({
+        success: true,
+        message: "user created successfully",
+        user: user.id
+    });
+});
+
+//Create an event
+router.post("/event-create", async(req, res) => {
+  let event = await dbMethods.CreateEvent(
+    req.body.title,
+    req.body.rating,
+    req.body.colour,
+    req.body.notes,
+    req.body.userId,
+    req.body.date
+  );
+  return res.status(200).json({
+        success: true,
+        message: "event created successfully",
+        event: event
+    });
+});
+
+//Get all events by userId
+router.get("user/:id/events", async(req, res) => {
+  let events = await dbMethods.getEventsByUser(
+    req.params.id
+  );
+  return res.status(200).json({
+        success: true,
+        message: "events fetched successfully",
+        events: events
+    });
+});
+
+//Get all events by month
+router.get("month/events", async(req, res) => {
+  let events = await dbMethods.getEventsByMonth(
+    req.body.startDate,
+    req.body.userId
+  );
+  return res.status(200).json({
+        success: true,
+        message: "events fetched successfully",
+        events: events
+    });
+});
+
+//Get all events by date
+router.get("date/events", async(req,res) => {
+  let events = await dbMethods.getEventsByDate(
+    req.body.date,
+    req.body.userId
+  );
+  return res.status(200).json({
+        success: true,
+        message: "events fetched successfully",
+        events: events
+    });
+});
+
 //Test route
 router.get("/test",async (req, res) => {
     res.send("Here is a working endpoint").status(201);
-})
-
-// // Fetches the latest events
-// router.get("/latest", async (req, res) => {
-//   let collection = await db.collection("events");
-//   let results = await collection.aggregate([
-//     {"$project": {"author": 1, "title": 1, "tags": 1, "date": 1}},
-//     {"$sort": {"date": -1}},
-//     {"$limit": 3}
-//   ]).toArray();
-//   res.send(results).status(200);
-// });
-
-// // Get a single event
-// router.get("/:id", async (req, res) => {
-//   let collection = await db.collection("posts");
-//   let query = {_id: ObjectId(req.params.id)};
-//   let result = await collection.findOne(query);
-
-//   if (!result) res.send("Not found").status(404);
-//   else res.send(result).status(200);
-// });
-
-// // Add a new document to the collection
-// router.post("/", async (req, res) => {
-//   let collection = await db.collection("posts");
-//   let newDocument = req.body;
-//   newDocument.date = new Date();
-//   let result = await collection.insertOne(newDocument);
-//   res.send(result).status(204);
-// });
-
-// // Update the post with a new comment
-// router.patch("/comment/:id", async (req, res) => {
-//   const query = { _id: ObjectId(req.params.id) };
-//   const updates = {
-//     $push: { comments: req.body }
-//   };
-
-//   let collection = await db.collection("posts");
-//   let result = await collection.updateOne(query, updates);
-
-//   res.send(result).status(200);
-// });
-
-// // Delete an entry
-// router.delete("/:id", async (req, res) => {
-//   const query = { _id: ObjectId(req.params.id) };
-
-//   const collection = db.collection("posts");
-//   let result = await collection.deleteOne(query);
-
-//   res.send(result).status(200);
-// });
+});
 
 export default router;

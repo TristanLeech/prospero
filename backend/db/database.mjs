@@ -17,13 +17,13 @@ export async function getUsers() {
 
 // Function to get user by email and password
 export async function getUser(email, password){
-  const sql = 'SELECT * FROM Users WHERE email = ? AND password = ?';
+  const sql = 'SELECT * FROM users WHERE email = ? AND password = ?';
   pool.query(sql, [email, password], (err, result) => {
     if (err) {
       res.status(500).json({ message: 'An error occurred while processing your request.' });
     } else {
       if (result.length > 0) {
-        res.status(200).json({ message: 'Login successful' });
+        res.status(200).json(res.user);
       } else {
         res.status(401).json({ message: 'Login failed. Invalid email or password.' });
       }
@@ -35,13 +35,41 @@ export async function getUser(email, password){
 export async function CreateUser(username, email, password){
     const sql = `INSERT INTO users
         (
-            username, email, password
+            Username, Email, Password
         )
-        VALUES (?)`;
+        VALUES (?, ?, ?)`;
     const values = [
         username,
         email,
         password
+    ];
+
+    pool.query(sql, values, (err, result) => {
+        if (err) {
+            res.status(500).json({ message: 'An error occurred while processing your request.' });
+        } else {
+            const insertedId = result.insertId;
+
+            pool.query('SELECT * FROM users WHERE Id = ?', [insertedId], (err, rows) => {
+              if (err) {
+                res.status(500).json({ message: 'Error fetching created user.' });
+              } else {
+                res.status(200).json(rows[0]);
+              }
+            });
+        }
+    });
+}
+
+// Function to create new event
+export async function CreateEvent(title, rating, colour, notes, userId, date){
+    const sql = `INSERT INTO event
+        (
+            title, rating, colour, notes, userId, date
+        )
+        VALUES (?, ?, ?, ?, ?, ?)`;
+    const values = [
+        title, rating, colour, notes, userId, date
     ];
 
     pool.query(sql, values, (err, result) => {
@@ -54,5 +82,153 @@ export async function CreateUser(username, email, password){
 }
 
 // Function to create new event
+export async function CreateEventDetail(title, rating, colour, notes, userId, isComplete, DueDate){
+    const sql = `INSERT INTO event
+        (
+            title, rating, colour, notes, userId, isComplete, DueDate
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    const values = [
+        title, rating, colour, notes, userId, isComplete, DueDate
+    ];
+
+    pool.query(sql, values, (err, result) => {
+        if (err) {
+            res.status(500).json({ message: 'An error occurred while processing your request.' });
+        } else {
+            res.status(200).json(result);
+        }
+    });
+}
 
 // Function to get all events by user
+export async function getEventsByUser(userId){
+    const sql = 'SELECT * FROM events WHERE userId = ? ORDER BY date';
+  pool.query(sql, [userId], (err, result) => {
+    if (err) {
+      res.status(500).json({ message: 'An error occurred while processing your request.' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json(res.events);
+      } else {
+        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
+      }
+    }
+  });
+}
+
+// Function to get all eventDetails by user
+export async function getEventDetailsByUser(userId){
+    const sql = 'SELECT * FROM eventDetails WHERE userId = ? ORDER BY date';
+  pool.query(sql, [userId], (err, result) => {
+    if (err) {
+      res.status(500).json({ message: 'An error occurred while processing your request.' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json(res.events);
+      } else {
+        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
+      }
+    }
+  });
+}
+
+// Function to get all events by month
+export async function getEventsByMonth(startDate, userId){
+    const endDate = new Date(startDate);
+    endDate.setMonth(endDate.getMonth() + 1);
+    const sql = 'SELECT * FROM events WHERE userId = ? AND date BETWEEN ? AND ? ORDER BY date';
+  pool.query(sql, [userId, startDate, endDate], (err, result) => {
+    if (err) {
+      res.status(500).json({ message: 'An error occurred while processing your request.' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json(res.events);
+      } else {
+        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
+      }
+    }
+  });
+}
+
+// Function to get all events by month
+export async function getEventDetailsByMonth(startDate, userId){
+    const endDate = new Date(startDate);
+    endDate.setMonth(endDate.getMonth() + 1);
+    const sql = 'SELECT * FROM eventDetails WHERE userId = ? AND dueDate BETWEEN ? AND ? ORDER BY dueDate';
+  pool.query(sql, [userId, startDate, endDate], (err, result) => {
+    if (err) {
+      res.status(500).json({ message: 'An error occurred while processing your request.' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json(res.events);
+      } else {
+        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
+      }
+    }
+  });
+}
+
+// Function to get all events by date
+export async function getEventsByDate(date, userId){
+    const sql = 'SELECT * FROM events WHERE userId = ? AND date = ? ORDER BY date';
+  pool.query(sql, [userId, date], (err, result) => {
+    if (err) {
+      res.status(500).json({ message: 'An error occurred while processing your request.' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json(res.events);
+      } else {
+        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
+      }
+    }
+  });
+}
+
+// Function to get all event details by date
+export async function getEventDetailsByDate(date, userId){
+    const sql = 'SELECT * FROM eventDetails WHERE userId = ? AND dueDate = ? ORDER BY dueDate';
+  pool.query(sql, [userId, date], (err, result) => {
+    if (err) {
+      res.status(500).json({ message: 'An error occurred while processing your request.' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json(res.events);
+      } else {
+        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
+      }
+    }
+  });
+}
+
+//Function to get event by event id
+export async function getEventById(eventId){
+    const sql = 'SELECT * FROM events WHERE Id = ?';
+  pool.query(sql, [eventId], (err, result) => {
+    if (err) {
+      res.status(500).json({ message: 'An error occurred while processing your request.' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json(res.event);
+      } else {
+        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
+      }
+    }
+  });
+}
+
+//Function to get event by event id
+export async function getEventDetailById(eventId){
+    const sql = 'SELECT * FROM eventDetails WHERE Id = ?';
+  pool.query(sql, [eventId], (err, result) => {
+    if (err) {
+      res.status(500).json({ message: 'An error occurred while processing your request.' });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json(res.event);
+      } else {
+        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
+      }
+    }
+  });
+}
