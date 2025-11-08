@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './addWindow.css';
+import './addEvent.css';
 
-function AddWindow() {
+function AddEvent() {
     return (
         <div className="addPage">
             <div className="addWindow">
@@ -25,4 +25,4 @@ function AddWindow() {
     );
 }
 
-export default AddWindow;
+export default AddEvent;

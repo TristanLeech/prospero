@@ -3,6 +3,7 @@
   import { Link } from "react-router-dom";
 import MonthHeader from "../../components/monthYear";
 import DaysLoader from "../../components/daysLoader";
+import AddPopup from "../../components/addPopup/addPopup";
 
 
 
@@ -31,7 +32,14 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
             <div className="calendarHeader">
               <div className="spaceholder"></div>
               <MonthHeader />
-              <button to={"/pages/addWindow/addWindow.js"}><div className="addButton"><h2>+</h2></div></button>
+              <button onClick={openPopup} to={"/pages/addPopup/addPopup.jsx"}><div className="addButton"><h2>+</h2></div></button>
+              {isPopupOpen && (
+                <AddPopup onClose={closePopup}>
+                  <h3>Add:</h3>
+                  <Link to="/pages/addEvent/addEvent.jsx" ><p>Event</p></Link>
+                  <Link to="/pages/addTracker/addTracker.jsx" >Tracker</Link>
+                </AddPopup>
+              )}
             </div>
             <table className="calendarTable">
               <thead>
