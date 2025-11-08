@@ -14,6 +14,7 @@ import Login from './pages/login/login.jsx';
 import Day from './pages/day/day.jsx';
 import Upcoming from './pages/upcoming/upcoming.jsx';
 import Todo from "./components/navbar/todo/todo.jsx";
+import AddWindow from "./pages/addWindow/addWindow.jsx";
 
 // Optional: Scroll to top on page change
 function ScrollToTop() {
@@ -37,6 +38,7 @@ function AppInner() {
                   <Route path="/pages/upcoming/upcoming.jsx" element={<Upcoming />} />
                   <Route path="/pages/day/day.jsx" element={<Day />} />
                   <Route path="/components/navbar/todo/todo.jsx" element={<Todo />} />
+                  <Route path="/pages/addWindow/addWindow.js" element={<AddWindow />} />
 
                   {/* Fallback */}
                   <Route

@@ -1,12 +1,10 @@
-  import React from "react";
+  import React, {useState} from "react";
   import "./month.css";
   import { Link } from "react-router-dom";
 import MonthHeader from "../../components/monthYear";
 import DaysLoader from "../../components/daysLoader";
 
-const openPopupBtn = document.getElementById('openPopupBtn');
-const closePopupBtn = document.getElementById('closePopupBtn');
-const myPopup = document.getElementById('myPopup');
+
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const dates = [
@@ -17,9 +15,11 @@ const dates = [
   ["27", "28", "29", "30", "31", " ", " "],
 ];
 
-
-
 function Month() {
+const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const openPopup = () => setIsPopupOpen(true);
+  const closePopup = () => setIsPopupOpen(false);
+
   return (
     <div className="monthPage">
       <div className="monthCarousel">
@@ -31,7 +31,7 @@ function Month() {
             <div className="calendarHeader">
               <div className="spaceholder"></div>
               <MonthHeader />
-              <Link to={"/pages/day/day.jsx"}><div className="addButton"><h2>+</h2></div></Link>
+              <button to={"/pages/addWindow/addWindow.js"}><div className="addButton"><h2>+</h2></div></button>
             </div>
             <table className="calendarTable">
               <thead>

@@ -21,7 +21,7 @@ function Signup() {
             setErrorMessage('');
 
             // Send signUp request to server
-            const response = await axios.post('http://localhost:5050/prospero/user-sign-up', { userName, email, password });
+            const response = await axios.post('/prospero/user-sign-up', { userName, email, password });
 
             // If signUp successful, redirect to MainPage
             if (response.status === 200) {

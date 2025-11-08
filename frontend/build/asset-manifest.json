@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a4739cbf.css",
+    "main.js": "/static/js/main.09fecf9b.js",
+    "static/media/waves.png": "/static/media/waves.08236d62e65b5cba27db.png",
+    "static/media/crystalBall.png": "/static/media/crystalBall.69e0d9e573e7dddfc996.png",
+    "static/media/tempest.png": "/static/media/tempest.7626ca95ba7fba446533.png",
+    "static/media/windyLeaf.png": "/static/media/windyLeaf.bd5647a0189025a5c5b5.png",
+    "index.html": "/index.html",
+    "main.a4739cbf.css.map": "/static/css/main.a4739cbf.css.map",
+    "main.09fecf9b.js.map": "/static/js/main.09fecf9b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4739cbf.css",
+    "static/js/main.09fecf9b.js"
+  ]
+}

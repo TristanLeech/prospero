@@ -19,7 +19,7 @@ function Login() {
             setErrorMessage('');
 
             // Send login request to server
-            const response = await axios.post('http://localhost:5050/prospero/user-login', { email, password });
+            const response = await axios.post('/prospero/user-login', { email, password });
 
             // If login successful, redirect to MainPage
             if (response.status === 200) {

@@ -1,0 +1,80 @@
+.addPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addWindow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #424F6D;
+    border-radius: 10px;
+    margin: 8px;
+    overflow: hidden;
+    width: 80%;
+}
+
+.addHeader{
+    background-color: #2b3347;
+    color: #5b6886;
+    font-size: 20px;
+    border-radius: 10px;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin: 10px;
+    width:98%;
+}
+
+.formDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.addForm{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width: 80%;
+    color: #7c89a8;
+}
+
+.addForm input{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    background-color: #5b6886;
+    color: white;
+}
+.addForm button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 50%;
+    background-color: #2b3347;
+    color: white;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+.addForm ::placeholder{
+    color: #cccc;
+    opacity: 0.7;
+}
+
+.addForm h3{
+    margin-left: 50px;
+}
+
+.calendarHeader button{
+    border-radius: 50%;
+}
