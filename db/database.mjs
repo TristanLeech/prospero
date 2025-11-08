@@ -8,7 +8,8 @@ const pool = mysql.createPool({
     database: 'prospero', // DEFINE YOUR DATABASE NAME
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0, 
+    queueLimit: 0,
+    enableKeepAlive: true,
 }).promise();
 
 // Function to get all notes from the database
