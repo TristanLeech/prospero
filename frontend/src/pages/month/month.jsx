@@ -4,27 +4,9 @@
 import MonthHeader from "../../components/monthYear";
 import DaysLoader from "../../components/daysLoader";
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const monthYear =document.getElementById('month-year');
-
-//   const months=[
-//     'January', 'February', 'March', 'April', 'May', 'June',
-//     'July', 'August', 'September', 'October', 'November', 'December'
-//   ];
-
-//   let currentDate=new Date();
-//   let today=new Date();
-
-//   function renderCalendar(date){
-//     const year=date.getFullYear();
-//     const month=date.getMonth();
-//     const firstDay=new Date(year, month, 1).getDay();
-//     const lastDay=new Date(year, month+1, 0).getDate();
-
-//     monthYear.textContent=`${months[month]} ${year}`;
-//   }
-//   renderCalendar(currentDate);
-// });
+const openPopupBtn = document.getElementById('openPopupBtn');
+const closePopupBtn = document.getElementById('closePopupBtn');
+const myPopup = document.getElementById('myPopup');
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const dates = [
@@ -34,6 +16,8 @@ const dates = [
   ["20", "21", "22", "23", "24", "25", "26"],
   ["27", "28", "29", "30", "31", " ", " "],
 ];
+
+
 
 function Month() {
   return (

@@ -2,9 +2,9 @@ import mysql from 'mysql2';
 
 // Create a MySQL connection pool
 const pool = mysql.createPool({
-    host: 'localhost', // MYSQL_HOST you can also use 127.0.0.1
+    host: process.env.STACKHERO_MYSQL_HOST, // MYSQL_HOST you can also use 127.0.0.1
     user: 'root', // MYSQL_USER
-    password: '',
+    password: process.env.STACKHERO_MYSQL_ROOT_PASSWORD,
     database: 'prospero' // DEFINE YOUR DATABASE NAME
 }).promise();
 
