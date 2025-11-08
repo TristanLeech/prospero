@@ -5,6 +5,7 @@ const pool = mysql.createPool({
     host: process.env.STACKHERO_MYSQL_HOST, // MYSQL_HOST you can also use 127.0.0.1
     user: 'root', // MYSQL_USER
     password: process.env.STACKHERO_MYSQL_ROOT_PASSWORD,
+    port: process.env.STACKHERO_MYSQL_PORT,
     database: 'prospero', // DEFINE YOUR DATABASE NAME
     waitForConnections: true,
     connectionLimit: 10,
