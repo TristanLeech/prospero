@@ -16,6 +16,12 @@ function AddEvent() {
                             <h3>Date & Time</h3>
                         <input type="datetime-local" />
 
+                        <div className="colourDiv">
+                            <h3>Colour:</h3>
+                            <input type="color" className="colourPicker" value="#"/>
+                        </div>
+                        
+
                         <button type="submit" className="submitButton">Add Event</button>
                     </form>
                 </div>

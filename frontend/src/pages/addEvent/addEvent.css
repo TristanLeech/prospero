@@ -68,3 +68,12 @@
     margin-left: 50px;
 }
 
+.colourDiv{
+    display: flex;
+    flex-direction: row;
+}
+
+.colourPicker{
+    height: 50px;
+    width: 50px;
+}
