@@ -22,29 +22,22 @@ export async function getUsers() {
 
 // Function to get user by email and password
 export async function getUser(email, password){
-  try{
-    const sql = 'SELECT * FROM users WHERE email = ? AND password = ?';
-  pool.query(sql, [email, password], (err, result) => {
-    if (err) {
-      res.status(500).json({ message: 'An error occurred while processing your request.' });
-    } else {
-      if (result.length > 0) {
-        res.status(200).json(res.user);
-      } else {
-        res.status(401).json({ message: 'Login failed. Invalid email or password.' });
-      }
-    }
-  });
-  }
-  catch (err){
-    res.status(500).json({ message: 'An error occurred while processing your request.' });
+  const sql = 'SELECT * FROM users WHERE email = ? AND password = ?';
+  try {
+    const [rows] = await pool.query(
+      sql,
+      [email, password]
+    );
+    return rows[0] || null; // Return one user or null
+  } catch (err) {
+    console.error('Database getUser() failed:', err);
+    throw err;
   }
 }
 
 // Function to create new user
 export async function CreateUser(username, email, password){
-  try{
-    const sql = `INSERT INTO users
+  const sql = `INSERT INTO users
         (
             Username, Email, Password
         )
@@ -55,24 +48,12 @@ export async function CreateUser(username, email, password){
         password
     ];
 
-    pool.query(sql, values, (err, result) => {
-        if (err) {
-            res.status(500).json({ message: 'An error occurred while processing your request.' });
-        } else {
-            const insertedId = result.insertId;
-
-            pool.query('SELECT * FROM users WHERE Id = ?', [insertedId], (err, rows) => {
-              if (err) {
-                res.status(500).json({ message: 'Error fetching created user.' });
-              } else {
-                res.status(200).json(rows[0]);
-              }
-            });
-        }
-    });
-  }
-  catch (err){
-    res.status(500).json({ message: 'An error occurred while processing your request.' });
+  try{
+    const user = pool.query(sql, values);
+    return user || null;
+  } catch (err) {
+    console.error('Database CreateUser() failed:', err);
+    throw err;
   }
 }
 
