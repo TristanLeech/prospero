@@ -70,37 +70,45 @@ and the necessary dependancy from the list below
     mongodb
     mysql2
 
+To start the app, you must run first in the backend terminal, and then in the frontend terminal:
+
+### `npm start`
+
+Runs the app in the development mode.\
+
+The page will reload when you save changes.
+You may also see any errors in the console.
+
 ---
 
 # Product Features
 
+Prospero features several pages on which to view information
+
+### -Landing and Login Pages
+### -Calendar View
+### -Task Addition View
+### -Upcoming tasks
+
+The user journey is intended to guide the user intuitively through the process, with the different pages allowing them to add their own events to their calendar, and the account system allowing them to access their information from anywhere
 
 ---
 
 # Development Process
 
-
+Hosting the site was on of the most difficult parts of the project, breaking half of the functionality
 
 ---
 
 # Final Outcome
 
 
+Large parts of the site remain broken, with database functionality and additional features still lacking
 
 ---
 
 # Conclusion
 
-
+Having full creative control of a site was freeing, and being able to know all the code, and not trying to familiarise myself with  unfamiliar code felt good. While large parts of the site need improvement as it stands, the project is pleasing
 
 ---
-
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-
-The page will reload when you save changes.\
-You may also see any lint errors in the console.
