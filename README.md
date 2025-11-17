@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+<!-- <img width="100" alt="image" src="https://github.com/user-attachments/assets/a62a62fc-93c8-4073-9997-7b5c16dd87bf" /> -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <img width="150" height="150" alt="tempLogo" src="https://github.com/user-attachments/assets/2e51b42a-1eae-4ebf-8f28-8f93ac206bcd" />
+</div>
 
-## Available Scripts
+## [Prospero](https://github.com/TristanLeech/prospero)
+<img width="1919" height="128" alt="Screenshot 2025-11-16 225523" src="https://github.com/user-attachments/assets/0a11e064-fe9e-480b-940c-47a7a38cf28d" />
+
+**Prospero is an organisational tool intended for neurodivergent audiences**
+Author: Tristan Leech
+
+This site is currently being hosted at [prospero.life](http://prospero.life)
+
+<br />
+
+# About The Project
+
+**This website was designed to allow users to create a calendar specific to their account, and populate it with events they wish to keep track of. The UI is intended to be uncluttered, with a minimalist aesthetic, in order to appear calming.**
+
+The project was made using HTML, CSS, MySQL, and Node.js, with a React framework
+
+<img width="1919" height="1079" alt="Screenshot 2025-11-16 225619" src="https://github.com/user-attachments/assets/1d9fa22e-2f2d-48ae-8e4c-ee8c6df8229c" />
+
+
+---
+
+# Getting Started
+
+Cloning this repository has several steps. Firstly, the following link can be used to clone directly from github:
+
+https://github.com/TristanLeech/prospero.git
+
+The project contains two main folders; the frontend and backend folders. When installing the dependancies, a terminal must be opened from within each folder. 
+
+The following can be installed by running 
+```
+npm install
+```
+and the necessary dependancy from the list below
+
+## Frontend Dependencies
+
+    @emotion/react
+    @emotion/styled
+    @mui/material
+    @testing-library/dom
+    @testing-library/jest-dom
+    @testing-library/react
+    @testing-library/user-event
+    axios
+    express
+    mongodb
+    mongoose
+    react
+    react-dom
+    react-gtm-module
+    react-router-dom
+    react-scripts
+    web-vitals
+    
+
+## Backend Dependencies
+
+    dependencies
+    cors
+    dotenv
+    express
+    express-async-errors
+    mongodb
+    mysql2
+
+---
+
+# Product Features
+
+
+---
+
+# Development Process
+
+
+
+---
+
+# Final Outcome
+
+
+
+---
+
+# Conclusion
+
+
+
+---
+
 
 In the project directory, you can run:
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you save changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
